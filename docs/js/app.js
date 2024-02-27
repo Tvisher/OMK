@@ -21,7 +21,6 @@ const headerSlliderSlides = headerSlliderEl.querySelectorAll('.release-item');
 const defaultActiveSlideIndex = Array.from(headerSlliderSlides).findIndex(slide => slide.classList.contains('active-release'));
 const releasesSlider = new Swiper(headerSlliderEl, {
     initialSlide: defaultActiveSlideIndex,
-    // speed: 800,
     grabCursor: true,
     slidesPerView: 'auto',
     freeMode: true,
@@ -56,6 +55,7 @@ const mainScreenSlider = new Swiper('.main-screen__slider', {
     speed: 800,
     slidesPerView: 1,
     spaceBetween: 14,
+    loop: true,
     effect: 'fade',
     fadeEffect: {
         crossFade: true
@@ -80,7 +80,53 @@ sliderScrollContainer.forEach(sliderNews => {
             sliderNewsWrapper.classList.remove('hide-shadow')
         }
     })
-})
+});
+
+
+
+var peopleSaysThumbsSlider = new Swiper(".people-says__thumbs-slider", {
+    // loop: true,
+    speed: 800,
+    spaceBetween: 37,
+    slidesPerView: 'auto',
+    freeMode: true,
+    watchSlidesProgress: true,
+    direction: 'vertical',
+    on: {
+        progress: function (swiper, p) {
+            if (swiper.isEnd) {
+                swiper.el.classList.add('slider_end')
+            } else {
+                swiper.el.classList.remove('slider_end')
+            }
+
+        },
+    }
+});
+
+var peopleSaysMainSlider = new Swiper(".people-says__main-slider", {
+    // loop: true,
+    speed: 800,
+    spaceBetween: 10,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+        swiper: peopleSaysThumbsSlider,
+    },
+    on: {
+        transitionStart: () => peopleSaysThumbsSlider.slideTo(peopleSaysMainSlider.activeIndex)
+    }
+});
+
+
+
+
 
 
 

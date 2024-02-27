@@ -39,6 +39,15 @@ body {
   color: #000;
 }
 
+.smal-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px 10px;
+  border-left: 1px solid #d7dae2;
+  border-right: 1px solid #d7dae2;
+}
+
 .container {
   width: 100%;
   flex: 0 0 auto;
@@ -58,6 +67,13 @@ body {
   @media screen and (max-width: $smPhoneWidth) {
     padding: 0 10px;
   }
+}
+
+.section-title {
+  color: #363a45;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 120%;
 }
 
 .header__logo {
@@ -289,7 +305,7 @@ body {
   width: 100%;
   height: 100%;
   &::before {
-    transition: opacity 0.3s ease-in-out 0.3s, visibility 0.3s ease-in-out 0.3s;
+    transition: opacity 0.2s ease-in-out 0s, visibility 0.2s ease-in-out 0s;
     opacity: 0;
     visibility: hidden;
     z-index: 10;
@@ -396,7 +412,7 @@ body {
   top: 0;
   height: 100%;
   bottom: 0;
-  transition: width 0.4s ease-in-out 0.1s;
+  transition: width 0.4s ease-in-out 0s;
   overflow: hidden;
   width: 48px;
   height: auto;
@@ -512,5 +528,219 @@ body {
     padding: 2px 5px;
     border-radius: 4px;
     border: 1px solid #fb4503;
+  }
+}
+
+.main-screen__slider {
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 43px;
+    height: 43px;
+    border-radius: 16px;
+    border: 1px solid #fff;
+    transform: none;
+    position: static;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:after {
+      display: none;
+    }
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  .main-screen__nav {
+    gap: 10px;
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+    right: 430px;
+    z-index: 2;
+  }
+}
+
+.people-says__sliders {
+  display: flex;
+  overflow: hidden;
+  height: 486px;
+  padding-left: 26px;
+  padding-right: 33px;
+}
+
+.people-says__main-slider {
+  width: 100%;
+  margin: 0;
+  margin-top: auto;
+  height: 334px;
+  margin-bottom: 45px;
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 43px;
+    height: 43px;
+    border-radius: 16px;
+    border: 1px solid #363a45;
+    transform: none;
+    position: static;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:after {
+      display: none;
+    }
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  .people-says__main-slider_nav {
+    position: absolute;
+    left: 390px;
+    bottom: 50px;
+    z-index: 2;
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.people-says__main-slide {
+  user-select: none;
+  display: flex;
+  .slide-image {
+    flex-shrink: 0;
+    width: 334px;
+    height: 334px;
+    border-radius: 50%;
+    margin-right: 58px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .slide-text {
+    color: #363a45;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 130%;
+    margin-top: auto;
+    overflow: hidden;
+    @include pruning(4);
+  }
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 37px;
+  }
+  .slide-name {
+    color: #fb4503;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 120%;
+    @include pruning(1);
+  }
+  .slide-descr {
+    color: #121212;
+    font-size: 18px;
+    font-weight: 400;
+    @include pruning(1);
+  }
+  .slide-person {
+    padding-top: 25px;
+    padding-left: 116px;
+  }
+}
+
+.people-says__thumbs-slider {
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: "";
+    height: 100px;
+    background: linear-gradient(0deg, #fff 9.82%, rgba(255, 255, 255, 0) 100%);
+    z-index: 3;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  }
+  &.slider_end::before {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  width: 130px;
+  flex-shrink: 0;
+  margin: 0;
+  margin-left: 54px;
+  text-align: center;
+  .thumbs-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    &.swiper-slide-active {
+      // .thumbs-slide__image {
+      //   transform: scale(0.5);
+      // }
+    }
+  }
+  .thumbs-slide__name {
+    color: #fb4503;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 120%;
+  }
+  .thumbs-slide__descr {
+    color: #121212;
+    font-size: 10px;
+    font-weight: 400;
+  }
+  .thumbs-slide__image {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.people-says {
+  position: relative;
+  &::before {
+    content: "";
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: 1px;
+    background-color: #d7dae2;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 350px;
+    width: 85px;
+    height: 43px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='85' height='43' viewBox='0 0 85 43' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cmask id='mask0_3036_3738' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='85' height='43'%3e%3crect width='85' height='43' fill='%23D9D9D9'/%3e%3c/mask%3e%3cg mask='url(%23mask0_3036_3738)'%3e%3cpath d='M67.4391 -21C72.7031 -21 77.0271 -19.308 80.4111 -15.924C83.7951 -12.6653 85.4871 -8.34133 85.4871 -2.952C85.4871 -0.445329 85.1738 2.06133 84.5471 4.568C83.9205 7.07467 82.5418 10.8347 80.4111 15.848L69.6951 42.92H51.0831L59.3551 13.028C56.2218 11.7747 53.7151 9.76933 51.8351 7.012C50.0805 4.12933 49.2031 0.808004 49.2031 -2.952C49.2031 -8.34133 50.8951 -12.6653 54.2791 -15.924C57.7885 -19.308 62.1751 -21 67.4391 -21Z' fill='%23FB4503'/%3e%3cpath d='M18.236 -21C23.5 -21 27.824 -19.308 31.208 -15.924C34.592 -12.6653 36.284 -8.34133 36.284 -2.952C36.284 -0.445329 35.9707 2.06133 35.344 4.568C34.7173 7.07467 33.3387 10.8347 31.208 15.848L20.492 42.92H1.88L10.152 13.028C7.01867 11.7747 4.512 9.76933 2.632 7.012C0.877334 4.12933 0 0.808004 0 -2.952C0 -8.34133 1.692 -12.6653 5.076 -15.924C8.58533 -19.308 12.972 -21 18.236 -21Z' fill='%23FB4503'/%3e%3c/g%3e%3c/svg%3e ");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 3;
+    transform: translateY(100%);
+  }
+  padding-top: 40px;
+  .section-title {
+    margin-bottom: -48px;
   }
 }
