@@ -14,8 +14,6 @@ function testWebP() {
 testWebP();
 
 
-
-
 const headerSlliderEl = document.querySelector('.header__slider');
 const headerSlliderSlides = headerSlliderEl.querySelectorAll('.release-item');
 const defaultActiveSlideIndex = Array.from(headerSlliderSlides).findIndex(slide => slide.classList.contains('active-release'));
@@ -31,9 +29,12 @@ const releasesSlider = new Swiper(headerSlliderEl, {
         prevEl: '.swiper-button-prev',
     },
     on: {
-        init: (slider) => {
-            // const defaultTranslate = slider.getTranslate() + 50;
-            // slider.setTranslate(defaultTranslate)
+        afterInit: (slider) => {
+            // setTimeout(() => {
+            //     const defaultTranslate = slider.getTranslate() + 150;
+            //     slider.setTranslate(defaultTranslate);
+            // }, 100);
+            headerSlliderEl.classList.add('loaded')
         },
         progress: function (swiper) {
             if (swiper.isEnd) {
@@ -82,9 +83,7 @@ sliderScrollContainer.forEach(sliderNews => {
     })
 });
 
-
-
-var peopleSaysThumbsSlider = new Swiper(".people-says__thumbs-slider", {
+const peopleSaysThumbsSlider = new Swiper(".people-says__thumbs-slider", {
     // loop: true,
     speed: 800,
     spaceBetween: 37,
@@ -104,7 +103,7 @@ var peopleSaysThumbsSlider = new Swiper(".people-says__thumbs-slider", {
     }
 });
 
-var peopleSaysMainSlider = new Swiper(".people-says__main-slider", {
+const peopleSaysMainSlider = new Swiper(".people-says__main-slider", {
     // loop: true,
     speed: 800,
     spaceBetween: 10,
@@ -124,8 +123,21 @@ var peopleSaysMainSlider = new Swiper(".people-says__main-slider", {
     }
 });
 
+const insetSlider = new Swiper('.inset-slider', {
+    speed: 800,
+    slidesPerView: 1,
+    spaceBetween: 14,
+    loop: true,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
 
-
+});
 
 
 
@@ -133,5 +145,23 @@ var peopleSaysMainSlider = new Swiper(".people-says__main-slider", {
 
 window.addEventListener('load', (e) => {
     releasesSlider.init();
-    headerSlliderEl.classList.add('loaded')
+});
+
+
+
+$(document).ready(function () {
+    const marquees = document.querySelectorAll('.popular-tags__list');
+    marquees.forEach((marqueeItem, index) => {
+        const direction = index % 2 == 0 ? 'left' : 'right';
+        $(marqueeItem).marquee({
+            duration: 30000, // Скорость бегущей строки в миллисекундах
+            gap: 10, // Расстояние между повторениями в пикселях
+            delayBeforeStart: 0, // Задержка перед началом анимации в миллисекундах
+            direction: direction, // Направление движения бегущей строки
+            duplicated: true, // Создавать копию текста для бесконечной анимации
+            pauseOnHover: true, // Остановка анимации при наведении
+            startVisible: true
+        });
+    })
+
 });
