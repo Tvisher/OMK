@@ -139,6 +139,19 @@ const insetSlider = new Swiper('.inset-slider', {
 
 });
 
+const galerySection = document.querySelector('.galery-section');
+const galerySectionSliderEl = galerySection.querySelector('.galery-section__slider')
+const prevBtn = galerySection.querySelector('.swiper-button-prev');
+const nextBtn = galerySection.querySelector('.swiper-button-next');
+const galerySectionSlider = new Swiper(galerySectionSliderEl, {
+    speed: 800,
+    slidesPerView: "auto",
+    spaceBetween: 20,
+    navigation: {
+        nextEl: nextBtn,
+        prevEl: prevBtn,
+    },
+});
 
 
 
