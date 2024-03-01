@@ -177,4 +177,38 @@ $(document).ready(function () {
         });
     })
 
+    $('.footer__title').marquee({
+        duration: 90000, // Скорость бегущей строки в миллисекундах
+        gap: 10, // Расстояние между повторениями в пикселях
+        delayBeforeStart: 0, // Задержка перед началом анимации в миллисекундах
+        direction: 'left', // Направление движения бегущей строки
+        duplicated: true, // Создавать копию текста для бесконечной анимации
+        startVisible: true
+    });
 });
+
+const leftMenu = document.querySelector('.main-screen__menu');
+
+document.addEventListener('pointerdown', (e) => {
+    const target = e.target;
+    if (target.closest('[data-menu-btn]')) {
+        const cuttentMenuItem = target.closest('[data-menu-btn]');
+        const cuttentMenuItemId = cuttentMenuItem.dataset.menuBtn;
+
+        const innerMenuItemPrev = document.querySelector('[data-menu-item].show');
+        const cuttentMenuItemPrev = document.querySelector('[data-menu-btn].selected');
+        if (cuttentMenuItemPrev) cuttentMenuItemPrev.classList.remove('selected');
+        if (innerMenuItemPrev) innerMenuItemPrev.classList.remove('show');
+
+        const innerMenuItem = document.querySelector(`[data-menu-item="${cuttentMenuItemId}"]`);
+        innerMenuItem.classList.add('show');
+        leftMenu.classList.add('fixed');
+        cuttentMenuItem.classList.add('selected');
+    }
+    if (!target.closest('.main-screen__wrapper') && leftMenu.classList.contains('fixed')) {
+        leftMenu.classList.remove('fixed');
+        document.querySelector('[data-menu-btn].selected').classList.remove('selected');
+        document.querySelector('[data-menu-item].show').classList.remove('show');;
+    }
+})
+
