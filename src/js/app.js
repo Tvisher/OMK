@@ -16,7 +16,8 @@ testWebP();
 
 const headerSlliderEl = document.querySelector('.header__slider');
 const headerSlliderSlides = headerSlliderEl.querySelectorAll('.release-item');
-const defaultActiveSlideIndex = Array.from(headerSlliderSlides).findIndex(slide => slide.classList.contains('active-release'));
+let defaultActiveSlideIndex = Array.from(headerSlliderSlides).findIndex(slide => slide.classList.contains('active-release'));
+defaultActiveSlideIndex = defaultActiveSlideIndex > 1 ? defaultActiveSlideIndex - 1 : 0;
 const releasesSlider = new Swiper(headerSlliderEl, {
     initialSlide: defaultActiveSlideIndex,
     grabCursor: true,
