@@ -30,11 +30,7 @@ const releasesSlider = new Swiper(headerSlliderEl, {
         prevEl: '.swiper-button-prev',
     },
     on: {
-        afterInit: (slider) => {
-            // setTimeout(() => {
-            //     const defaultTranslate = slider.getTranslate() + 150;
-            //     slider.setTranslate(defaultTranslate);
-            // }, 100);
+        beforeInit: (slider) => {
             headerSlliderEl.classList.add('loaded')
         },
         progress: function (swiper) {
@@ -140,19 +136,25 @@ const insetSlider = new Swiper('.inset-slider', {
 
 });
 
-const galerySection = document.querySelector('.galery-section');
-const galerySectionSliderEl = galerySection.querySelector('.galery-section__slider')
-const prevBtn = galerySection.querySelector('.swiper-button-prev');
-const nextBtn = galerySection.querySelector('.swiper-button-next');
-const galerySectionSlider = new Swiper(galerySectionSliderEl, {
-    speed: 800,
-    slidesPerView: "auto",
-    spaceBetween: 20,
-    navigation: {
-        nextEl: nextBtn,
-        prevEl: prevBtn,
-    },
-});
+const galerySections = document.querySelectorAll('.galery-section');
+if (galerySections.length > 1) {
+    galerySections.forEach(galerySection => {
+        const galerySectionSliderEl = galerySection.querySelector('.galery-section__slider')
+        const prevBtn = galerySection.querySelector('.swiper-button-prev');
+        const nextBtn = galerySection.querySelector('.swiper-button-next');
+        const galerySectionSlider = new Swiper(galerySectionSliderEl, {
+            speed: 800,
+            slidesPerView: "auto",
+            spaceBetween: 20,
+            navigation: {
+                nextEl: nextBtn,
+                prevEl: prevBtn,
+            },
+        });
+    })
+
+}
+
 
 
 
@@ -206,10 +208,36 @@ document.addEventListener('pointerdown', (e) => {
         leftMenu.classList.add('fixed');
         cuttentMenuItem.classList.add('selected');
     }
-    if (!target.closest('.main-screen__wrapper') && leftMenu.classList.contains('fixed')) {
+    if (!target.closest('.main-screen__wrapper') && leftMenu && leftMenu.classList.contains('fixed')) {
         leftMenu.classList.remove('fixed');
         document.querySelector('[data-menu-btn].selected').classList.remove('selected');
         document.querySelector('[data-menu-item].show').classList.remove('show');;
     }
 })
+
+
+const players = Plyr.setup('[data-players]', {
+    controls: [
+        'play-large',
+        'play',
+        'progress',
+        'current-time',
+        'mute',
+        'volume',
+        'captions',
+        'pip',
+        'airplay',
+        'fullscreen'
+    ],
+});
+
+
+$(document).on("click", ".toggle-block__head", function (e) {
+    $(this).parent().toggleClass("toggle-open");
+    $(this)
+        .next()
+        .slideToggle(() => {
+            $(this).toggleClass("toggle-open");
+        });
+});
 
