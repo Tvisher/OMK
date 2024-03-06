@@ -137,7 +137,7 @@ const insetSlider = new Swiper('.inset-slider', {
 });
 
 const galerySections = document.querySelectorAll('.galery-section');
-if (galerySections.length > 1) {
+if (galerySections.length > 0) {
     galerySections.forEach(galerySection => {
         const galerySectionSliderEl = galerySection.querySelector('.galery-section__slider')
         const prevBtn = galerySection.querySelector('.swiper-button-prev');
