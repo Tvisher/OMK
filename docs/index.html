@@ -9,6 +9,8 @@
     <!-- <link rel="preload" href="./fonts/Montserrat-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/swiper-bundle.min.js"></script>
+
     <script> </script>
 </head>
 
@@ -217,100 +219,114 @@
                             <div class="search__result-count">
                                 Найдено: 123 статей
                             </div>
-                            <div class="some-news__list">
-                                <article class="news-item">
-                                    <a href="javascript:void(0)" class="news-item__image">
-                                        <img src="./img/article-image.jpg" alt="">
-                                    </a>
-                                    <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
-                                    <h4 class="news-item__title">
-                                        <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью </a>
-                                    </h4>
-                                    <div class="news-item__tags">
-                                        <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                                    </div>
-                                </article>
-                                <article class="news-item news-item__no-image">
-                                    <h4 class="news-item__title">
-                                        <a href="javascript:void(0)">Заголовок статьи #3 рубрики “В Работе” - интервью
-                                            или статья объемом
-                                            от 3 до 8 тысяч
-                                            знаков. 4 строки на Главной странице</a>
-                                    </h4>
-                                    <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
-                                    <div class="news-item__tags">
-                                        <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                                    </div>
-                                </article>
-                                <article class="news-item">
-                                    <a href="javascript:void(0)" class="news-item__image">
-                                        <img src="./img/article-image.jpg" alt="">
-                                    </a>
-                                    <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
-                                    <h4 class="news-item__title">
-                                        <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью </a>
-                                    </h4>
-                                    <div class="news-item__tags">
-                                        <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                                    </div>
-                                </article>
-                                <article class="news-item">
-                                    <a href="javascript:void(0)" class="news-item__image">
-                                        <img src="./img/article-image.jpg" alt="">
-                                    </a>
-                                    <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
-                                    <h4 class="news-item__title">
-                                        <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью </a>
-                                    </h4>
-                                    <div class="news-item__tags">
-                                        <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                                        <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                                    </div>
-                                </article>
+                            <div class="some-news__list swiper search__result-slider">
+                                <div class="swiper-wrapper">
+                                    <article class="news-item swiper-slide">
+                                        <a href="javascript:void(0)" class="news-item__image">
+                                            <img src="./img/article-image.jpg" alt="">
+                                        </a>
+                                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                                        <h4 class="news-item__title">
+                                            <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью </a>
+                                        </h4>
+                                        <div class="news-item__tags">
+                                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                        </div>
+                                    </article>
+                                    <article class="news-item swiper-slide news-item__no-image">
+                                        <h4 class="news-item__title">
+                                            <a href="javascript:void(0)">Заголовок статьи #3 рубрики “В Работе” -
+                                                интервью
+                                                или статья объемом
+                                                от 3 до 8 тысяч
+                                                знаков. 4 строки на Главной странице</a>
+                                        </h4>
+                                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                                        <div class="news-item__tags">
+                                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                        </div>
+                                    </article>
+                                    <article class="news-item swiper-slide">
+                                        <a href="javascript:void(0)" class="news-item__image">
+                                            <img src="./img/article-image.jpg" alt="">
+                                        </a>
+                                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                                        <h4 class="news-item__title">
+                                            <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью </a>
+                                        </h4>
+                                        <div class="news-item__tags">
+                                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                        </div>
+                                    </article>
+                                    <article class="news-item swiper-slide">
+                                        <a href="javascript:void(0)" class="news-item__image">
+                                            <img src="./img/article-image.jpg" alt="">
+                                        </a>
+                                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                                        <h4 class="news-item__title">
+                                            <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью </a>
+                                        </h4>
+                                        <div class="news-item__tags">
+                                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                        </div>
+                                    </article>
+                                    <article class="news-item swiper-slide">
+                                        <a href="javascript:void(0)" class="news-item__image">
+                                            <img src="./img/article-image.jpg" alt="">
+                                        </a>
+                                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                                        <h4 class="news-item__title">
+                                            <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью </a>
+                                        </h4>
+                                        <div class="news-item__tags">
+                                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                        </div>
+                                    </article>
+                                </div>
                             </div>
                             <div class="search__pagination">
-                                <a href="javascript:void(0)" class="pagination__prev">
+                                <div class="swiper-button-prev pagination__prev">
                                     <svg width="8" height="11" viewBox="0 0 8 11" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7 9.5L2 5.5L7 1.5" stroke="white" stroke-width="2" />
                                     </svg>
-
-                                </a>
-                                <a href="javascript:void(0)" class="pagination__item active">1</a>
-                                <a href="javascript:void(0)" class="pagination__item">2</a>
-                                <a href="javascript:void(0)" class="pagination__item">3</a>
-                                <a href="javascript:void(0)" class="pagination__item">4</a>
-                                <a href="javascript:void(0)" class="pagination__next">
+                                </div>
+                                <div class="swiper-button-next pagination__next">
                                     <svg width="8" height="11" viewBox="0 0 8 11" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1 9.5L6 5.5L1 1.5" stroke="white" stroke-width="2" />
                                     </svg>
-
-                                </a>
-
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1018,7 +1034,6 @@
                         <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
                     </div>
                 </article>
-
             </div>
         </section>
     </div>
@@ -1148,6 +1163,17 @@
         </section>
     </div>
 </main>
+
+<script>
+
+    const searchResultSlider = new Swiper('.search__result-slider', {
+        slidesPerView: 4,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    })
+</script>
 <footer class="footer">
     <div class="footer__title_cont">
         <div class="footer__title">
@@ -1234,11 +1260,41 @@
         </div>
     </div>
 </footer>
+<div class="modal-template">
+    <div class="modal__content">
+        <div class="modal__close">
+
+
+        </div>
+        <div class="modal__title-wrapper">
+            <div class="modal__ico"></div>
+            <div class="modal__title">Подписка на рассылку <br>по E-mail</div>
+        </div>
+        <form class="subscription-form">
+            <label class="subscription-form__label">
+                <input type="text" placeholder="Введите E-mail" name="email" class="subscription-form__field">
+                <span class="field-err">Укажите корректный E-mail</span>
+            </label>
+            <div class="subscription-form__agreement">
+                <input type="checkbox" class="agreement__cb">
+                <div class="agreement__text">
+                    <span> Даю согласие на обработку моих персональных данных в соответствии с законом №152-ФЗ «О
+                        персональных
+                        данных» от 27.07.2006 и <a target="_blank" href="">Политикой Компании</a> в области защиты
+                        персональных данных,
+                        а
+                        также на
+                        получение рекламных и информационных рассылок</span>
+                </div>
+            </div>
+            <button type="submit" class="btn submit-btn">Отправить</button>
+        </form>
+    </div>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js"></script>
 <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-<script src="./js/swiper-bundle.min.js"></script>
 <script src="./js/app.js"></script>
 
 </html>

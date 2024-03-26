@@ -9,6 +9,8 @@
     <!-- <link rel="preload" href="./fonts/Montserrat-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/swiper-bundle.min.js"></script>
+
     <script> </script>
 </head>
 
@@ -787,11 +789,41 @@
         </div>
     </div>
 </footer>
+<div class="modal-template">
+    <div class="modal__content">
+        <div class="modal__close">
+
+
+        </div>
+        <div class="modal__title-wrapper">
+            <div class="modal__ico"></div>
+            <div class="modal__title">Подписка на рассылку <br>по E-mail</div>
+        </div>
+        <form class="subscription-form">
+            <label class="subscription-form__label">
+                <input type="text" placeholder="Введите E-mail" name="email" class="subscription-form__field">
+                <span class="field-err">Укажите корректный E-mail</span>
+            </label>
+            <div class="subscription-form__agreement">
+                <input type="checkbox" class="agreement__cb">
+                <div class="agreement__text">
+                    <span> Даю согласие на обработку моих персональных данных в соответствии с законом №152-ФЗ «О
+                        персональных
+                        данных» от 27.07.2006 и <a target="_blank" href="">Политикой Компании</a> в области защиты
+                        персональных данных,
+                        а
+                        также на
+                        получение рекламных и информационных рассылок</span>
+                </div>
+            </div>
+            <button type="submit" class="btn submit-btn">Отправить</button>
+        </form>
+    </div>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js"></script>
 <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-<script src="./js/swiper-bundle.min.js"></script>
 <script src="./js/app.js"></script>
 
 </html>
