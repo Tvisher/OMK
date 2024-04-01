@@ -2255,8 +2255,14 @@ body.search-page {
 }
 
 .modal-template {
+  opacity: 0;
+  visibility: hidden;
   z-index: 100;
   position: fixed;
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
   left: 0;
   top: 0;
   width: 100%;
