@@ -13,41 +13,51 @@ function testWebP() {
 // Проверка поддержки webP 
 testWebP();
 
+const headerSliderEl = document.querySelectorAll('.header__slider');
+if (headerSliderEl.length > 0) {
+    headerSliderEl.forEach(headerSlider => {
+        const headerSlliderSlides = headerSlider.querySelectorAll('.release-item');
+        let defaultActiveSlideIndex = Array.from(headerSlliderSlides).findIndex(slide => slide.classList.contains('active-release'));
+        defaultActiveSlideIndex = defaultActiveSlideIndex > 1 ? defaultActiveSlideIndex - 1 : 0;
+        const releasesSlider = new Swiper(headerSlider, {
+            initialSlide: defaultActiveSlideIndex,
+            grabCursor: true,
+            slidesPerView: 'auto',
+            freeMode: true,
+            spaceBetween: 14,
+            init: false,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            on: {
+                beforeInit: (slider) => {
+                    headerSlider.classList.add('loaded')
+                },
 
-const headerSlliderEl = document.querySelector('.header__slider');
-const headerSlliderSlides = headerSlliderEl.querySelectorAll('.release-item');
-let defaultActiveSlideIndex = Array.from(headerSlliderSlides).findIndex(slide => slide.classList.contains('active-release'));
-defaultActiveSlideIndex = defaultActiveSlideIndex > 1 ? defaultActiveSlideIndex - 1 : 0;
-const releasesSlider = new Swiper(headerSlliderEl, {
-    initialSlide: defaultActiveSlideIndex,
-    grabCursor: true,
-    slidesPerView: 'auto',
-    freeMode: true,
-    spaceBetween: 14,
-    init: false,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    on: {
-        beforeInit: (slider) => {
-            headerSlliderEl.classList.add('loaded')
-        },
-        progress: function (swiper) {
-            if (swiper.isEnd) {
-                swiper.el.classList.add('slider_end')
-            } else {
-                swiper.el.classList.remove('slider_end')
-            }
-            if (swiper.isBeginning) {
-                swiper.el.classList.remove('slider_move')
-            } else {
-                swiper.el.classList.add('slider_move')
-            }
-        },
-    },
-});
+                progress: function (swiper) {
+                    if (swiper.isEnd) {
+                        swiper.el.classList.add('slider_end')
+                    } else {
+                        swiper.el.classList.remove('slider_end')
+                    }
+                    if (swiper.isBeginning) {
+                        swiper.el.classList.remove('slider_move')
+                    } else {
+                        swiper.el.classList.add('slider_move')
+                    }
+                },
+            },
+        });
+        window.addEventListener('load', (e) => {
+            releasesSlider.init();
+        });
 
+
+
+    })
+
+}
 
 const mainScreenSlider = new Swiper('.main-screen__slider', {
     speed: 800,
@@ -62,7 +72,18 @@ const mainScreenSlider = new Swiper('.main-screen__slider', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    on: {
+        activeIndexChange: (slider) => {
+            if ($(window).width() < 993) {
+                $('.main-screen-slide__news-list_wrapper').slideUp();
+                $(".main-screen_btn_mobile").show();
+            }
+        },
+    }
 });
 
 const sliderScrollContainer = document.querySelectorAll('.main-screen-slide__news-list');
@@ -112,6 +133,10 @@ const peopleSaysMainSlider = new Swiper(".people-says__main-slider", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
     thumbs: {
         swiper: peopleSaysThumbsSlider,
     },
@@ -133,6 +158,10 @@ const insetSlider = new Swiper('.inset-slider', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
 
 });
 
@@ -150,20 +179,14 @@ if (galerySections.length > 0) {
                 nextEl: nextBtn,
                 prevEl: prevBtn,
             },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
         });
     })
 
 }
-
-
-
-
-
-window.addEventListener('load', (e) => {
-    releasesSlider.init();
-});
-
-
 
 $(document).ready(function () {
     const marquees = document.querySelectorAll('.popular-tags__list');
@@ -189,10 +212,32 @@ $(document).ready(function () {
         startVisible: true
     });
 });
+if (galerySections.length > 0) {
+    galerySections.forEach(galerySection => {
+        const galerySectionSliderEl = galerySection.querySelector('.galery-section__slider')
+        const prevBtn = galerySection.querySelector('.swiper-button-prev');
+        const nextBtn = galerySection.querySelector('.swiper-button-next');
+        const galerySectionSlider = new Swiper(galerySectionSliderEl, {
+            speed: 800,
+            slidesPerView: "auto",
+            spaceBetween: 20,
+            navigation: {
+                nextEl: nextBtn,
+                prevEl: prevBtn,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    })
 
-const leftMenu = document.querySelector('.main-screen__menu');
+}
 
-document.addEventListener('pointerdown', (e) => {
+
+const leftMenu = document.querySelector('.main-screen__menu._main-slider-menu');
+// const mobileMenuBack = document.querySelector('.mobile_menu_back');
+document.addEventListener('click', (e) => {
     const target = e.target;
     if (target.closest('[data-menu-btn]')) {
         const cuttentMenuItem = target.closest('[data-menu-btn]');
@@ -211,11 +256,23 @@ document.addEventListener('pointerdown', (e) => {
     if (!target.closest('.main-screen__wrapper') && leftMenu && leftMenu.classList.contains('fixed')) {
         leftMenu.classList.remove('fixed');
         document.querySelector('[data-menu-btn].selected').classList.remove('selected');
-        document.querySelector('[data-menu-item].show').classList.remove('show');;
+        document.querySelector('[data-menu-item].show').classList.remove('show');
     }
 })
 
+$("[data-mobile-menu-item]").on("click", function (e) {
+    e.preventDefault();
+    let href = $(this).attr("href");
+    console.log($(href));
+    $(href).addClass('show');
+    $('.mobile_menu_back').addClass('show');
 
+});
+$(".mobile_menu_back").on('click', function () {
+    $(this).removeClass('show')
+    $('.main-screen__menu-inner').removeClass('show')
+
+});
 const players = Plyr.setup('[data-players]', {
     controls: [
         'play-large',
@@ -231,13 +288,51 @@ const players = Plyr.setup('[data-players]', {
     ],
 });
 
+$(document).ready(function () {
+    $(document).on("click", ".toggle-block__head", function (e) {
+        $(this).parent().toggleClass("toggle-open");
+        $(this)
+            .next()
+            .slideToggle(() => {
+                $(this).toggleClass("toggle-open");
+            });
+    });
+    $(document).on("click", ".mobile_menu_btn", function (e) {
+        $('.mobile_menu_btn').toggleClass("active");
+        $('.mobile_menu').toggleClass("active");
+        $('body').toggleClass("locked");
 
-$(document).on("click", ".toggle-block__head", function (e) {
-    $(this).parent().toggleClass("toggle-open");
-    $(this)
-        .next()
-        .slideToggle(() => {
-            $(this).toggleClass("toggle-open");
-        });
-});
+    });
 
+    $(".menu-inner__search .search-input").on('input', function () {
+        if ($(this).val().trim().length) {
+            $('.search__close_text').addClass("active")
+        } else {
+            $('.search__close_text').removeClass("active");
+        }
+    });
+    $(".search__close_text").on('click', function () {
+        $('.menu-inner__search .search-input').val('');
+        $(this).removeClass("active");
+    });
+    $(".main-screen_btn_mobile").on('click', function () {
+        $(this).next().slideToggle();
+        $(this).hide();
+
+    });
+})
+const newsSlider = new Swiper('.news__list-slider', {
+    slidesPerView: 'auto',
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    breakpoints: {
+        577: {
+            slidesPerView: 2,
+        },
+        993: {
+            slidesPerView: 4,
+        },
+    },
+})

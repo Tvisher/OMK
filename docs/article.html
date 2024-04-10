@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OMK</title>
     <!-- <link rel="preload" href="./fonts/Montserrat-Black.woff2" as="font" type="font/woff2" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css?_v=20240401144005" />
-    <link rel="stylesheet" href="./css/main.css?_v=20240401144005">
-    <script src="./js/swiper-bundle.min.js?_v=20240401144005"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css?_v=20240410161733" />
+    <link rel="stylesheet" href="./css/main.css?_v=20240410161733">
+    <script src="./js/swiper-bundle.min.js?_v=20240410161733"></script>
 
     <script> </script>
 </head>
@@ -18,8 +18,9 @@
     <header class="header">
         <div class="container">
             <div class="header__wrapper">
+                <div class='mobile_menu_btn'><span></span></div>
                 <a href="#" class="header__logo">
-                    <picture><source srcset="./img/logo.webp" type="image/webp"><img src="./img/logo.png" alt=""></picture>
+                    <img src="./img/logo.svg" alt="">
                 </a>
                 <div class="header__slider swiper">
                     <div class="header__slider-before-shadow"></div>
@@ -85,17 +86,349 @@
                     </div>
                 </div>
                 <div class="header__search">
-                    <button class="header__search-btn">Поиск</button>
+                    <button class="header__search-btn"><span>Поиск</span></button>
                 </div>
             </div>
         </div>
     </header>
+    <div class='mobile_menu'>
+        <div class='main_menu_top'>
+            <div class='main_menu_top_item'>
+                <div class='mobile_menu_btn'><span></span></div>
+                <div class='mobile_menu_back'><span></span></div>
+            </div>
+            <a data-mobile-menu-item href="#search" class='main_menu_top_item'>
+                <div class="menu-item__ico">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="13.4033" cy="13.4038" r="7" stroke="white" stroke-width="2" />
+                        <path d="M18.3535 18.3535L22.5962 22.5962" stroke="white" stroke-width="2" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class='main_menu_body'>
+            <div class='main-screen__menu_wrapper'>
+                <div class="main-screen__menu _mobile-menu">
+                    <a data-mobile-menu-item href="#tags" class="main-screen__menu-item">
+                        <div class="menu-item__ico">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.25 11H23.25" stroke="white" stroke-width="2" />
+                                <path d="M4.75 17H20.75" stroke="white" stroke-width="2" />
+                                <path d="M13.9102 6.61377L7.59155 21.3133" stroke="white" stroke-width="2" />
+                                <path d="M20.4092 6.68652L14.0906 21.386" stroke="white" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="menu-item__name">Все теги</div>
+                    </a>
+                    <a data-mobile-menu-item href="#search" class="main-screen__menu-item">
+                        <div class="menu-item__ico">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="13.4033" cy="13.4038" r="7" stroke="white" stroke-width="2" />
+                                <path d="M18.3535 18.3535L22.5962 22.5962" stroke="white" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="menu-item__name">Поиск</div>
+                    </a>
+                    <div class="main-screen__menu-item">
+                        <div class="menu-item__ico">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="14" cy="13.1011" r="7" stroke="white" stroke-width="2" />
+                                <path
+                                    d="M10 19L8.23857 21.2894C7.73261 21.947 8.20141 22.8992 9.03113 22.8992H18.9689C19.7986 22.8992 20.2674 21.947 19.7614 21.2894L18 19"
+                                    stroke="white" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="menu-item__name">Шар предсказаний</div>
+                    </div>
+                    <div class="main-screen__menu-item">
+                        <div class="menu-item__ico">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.3648 22.2741H6.36252C5.30799 22.2741 4.45312 21.4192 4.45312 20.3647C4.45312 19.3102 5.30799 18.4553 6.36252 18.4553H20.3648C21.4193 18.4553 22.2742 19.3102 22.2742 20.3647C22.2742 21.4192 21.4193 22.2741 20.3648 22.2741Z"
+                                    stroke="white" stroke-width="2" />
+                                <path
+                                    d="M7.01423 18.4552C6.81241 15.0607 8.61843 10.9356 12.4633 8.90819C13.6729 8.27037 16.7012 8.27173 17.3065 8.27173V9.54466C16.9029 9.54466 15.4902 9.79925 15.4902 10.8176C15.4902 11.8359 15.4902 15.2728 19.7283 18.4552"
+                                    stroke="white" stroke-width="2" />
+                                <circle cx="20.3649" cy="8.90816" r="2.18233" stroke="white" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="menu-item__name">Тайный санта</div>
+                    </div>
+                    <div class="main-screen__menu-item">
+                        <div class="menu-item__ico">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="6.46875" y="6.5" width="5" height="5" stroke="white" stroke-width="2" />
+                                <rect x="6.46875" y="11.5" width="5" height="5" stroke="white" stroke-width="2" />
+                                <rect x="6.46875" y="16.5" width="5" height="5" stroke="white" stroke-width="2" />
+                                <rect x="11.5312" y="6.5" width="5" height="5" stroke="white" stroke-width="2" />
+                                <rect x="11.5312" y="11.5" width="5" height="5" stroke="white" stroke-width="2" />
+                                <rect x="11.5312" y="16.5" width="5" height="5" stroke="white" stroke-width="2" />
+                                <rect x="16.5312" y="6.5" width="5" height="5" stroke="white" stroke-width="2" />
+                                <rect x="16.5312" y="11.5" width="5" height="5" stroke="white" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="menu-item__name">Пятнашки</div>
+                    </div>
+                    <div class="main-screen__menu-item">
+                        <div class="menu-item__ico">
+                            <svg width="18" height="14" viewBox="0 0 18 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M0.151181 1.73582C0.117053 1.8183 0.0882838 1.90356 0.0653064 1.99116C0.0226917 2.15363 0 2.32416 0 2.5V11.5C0 12.6046 0.895431 13.5 2 13.5H16C17.1046 13.5 18 12.6046 18 11.5V2.5C18 2.32416 17.9773 2.15363 17.9347 1.99116C17.9117 1.90356 17.8829 1.8183 17.8488 1.73582C17.6423 1.23664 17.2394 0.839283 16.7365 0.63998C16.6685 0.613006 16.5986 0.589659 16.5271 0.570179C16.3591 0.524424 16.1824 0.5 16 0.5H2C1.81758 0.5 1.64086 0.524424 1.47293 0.570179C1.40144 0.589659 1.33154 0.613006 1.26348 0.63998C0.76058 0.839283 0.357739 1.23664 0.151181 1.73582ZM2 3.9549V11.5H16V3.9549L11.1371 8.89085C9.96198 10.0836 8.03801 10.0836 6.86293 8.89085L2 3.9549ZM14.6258 2.5L9.71236 7.48721C9.32066 7.88479 8.67934 7.88479 8.28764 7.48721L3.37421 2.5H14.6258Z"
+                                    fill="white" />
+                            </svg>
+
+                        </div>
+                        <div class="menu-item__name">Почтовые рассылки</div>
+                    </div>
+                </div>
+                <div class="main-screen__menu-inner" id="tags">
+                    <div class="menu-inner__tags-list">
+                        <a href="javascript:void(0)" class="menu-tag">#в_фокусе</a>
+                        <a href="javascript:void(0)" class="menu-tag">#в_работе</a>
+                        <a href="javascript:void(0)" class="menu-tag">#полезный_обмен</a>
+                        <a href="javascript:void(0)" class="menu-tag">#например</a>
+                        <a href="javascript:void(0)" class="menu-tag">#как_устроено</a>
+                        <a href="javascript:void(0)" class="menu-tag">#важная_деталь</a>
+                        <a href="javascript:void(0)" class="menu-tag">#в_перспективе</a>
+                        <a href="javascript:void(0)" class="menu-tag">#факультатив</a>
+                        <a href="javascript:void(0)" class="menu-tag">#как_устроено</a>
+                        <a href="javascript:void(0)" class="menu-tag">#важная_деталь</a>
+                        <a href="javascript:void(0)" class="menu-tag">#в_перспективе</a>
+                        <a href="javascript:void(0)" class="menu-tag">#факультатив</a>
+                        <a href="javascript:void(0)" class="menu-tag">#в_фокусе</a>
+                        <a href="javascript:void(0)" class="menu-tag">#в_работе</a>
+                        <a href="javascript:void(0)" class="menu-tag">#в_фокусе</a>
+                        <a href="javascript:void(0)" class="menu-tag">#в_работе</a>
+                        <a href="javascript:void(0)" class="menu-tag">#полезный_обмен</a>
+                        <a href="javascript:void(0)" class="menu-tag">#например</a>
+                        <a href="javascript:void(0)" class="menu-tag">#как_устроено</a>
+                        <a href="javascript:void(0)" class="menu-tag">#важная_деталь</a>
+                        <a href="javascript:void(0)" class="menu-tag">#в_перспективе</a>
+                        <a href="javascript:void(0)" class="menu-tag">#факультатив</a>
+                        <a href="javascript:void(0)" class="menu-tag">#как_устроено</a>
+                        <a href="javascript:void(0)" class="menu-tag">#важная_деталь</a>
+                        <a href="javascript:void(0)" class="menu-tag">#в_перспективе</a>
+                        <a href="javascript:void(0)" class="menu-tag">#факультатив</a>
+                        <a href="javascript:void(0)" class="menu-tag">#в_фокусе</a>
+                        <a href="javascript:void(0)" class="menu-tag">#в_работе</a>
+                    </div>
+                </div>
+                <div class="main-screen__menu-inner " id="search">
+                    <div class="menu-inner__search">
+                        <div class="search__head">
+                            <form class="inner-seach-form">
+                                <label class="inner-seach__label">
+                                    <input type="text" placeholder="Поиск" class="search-input">
+                                </label>
+                                <button type="submit" class="search-submit orange-btn">Поиск</button>
+                                <div class='search__close_text'></div>
+                            </form>
+                        </div>
+                        <div class="search__result">
+                            <div class="search__result-count">
+                                Найдено: 123 статей
+                            </div>
+                            <div class="some-news__list swiper search__result-slider">
+                                <div class="swiper-wrapper">
+                                    <article class="news-item swiper-slide">
+                                        <a href="javascript:void(0)" class="news-item__image">
+                                            <picture><source srcset="./img/article-image.webp" type="image/webp"><img src="./img/article-image.jpg" alt=""></picture>
+                                        </a>
+                                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                                        <h4 class="news-item__title">
+                                            <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью </a>
+                                        </h4>
+                                        <div class="news-item__tags">
+                                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                        </div>
+                                    </article>
+                                    <article class="news-item swiper-slide news-item__no-image">
+                                        <h4 class="news-item__title">
+                                            <a href="javascript:void(0)">Заголовок статьи #3 рубрики “В Работе”
+                                                -
+                                                интервью
+                                                или статья объемом
+                                                от 3 до 8 тысяч
+                                                знаков. 4 строки на Главной странице</a>
+                                        </h4>
+                                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                                        <div class="news-item__tags">
+                                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                        </div>
+                                    </article>
+                                    <article class="news-item swiper-slide">
+                                        <a href="javascript:void(0)" class="news-item__image">
+                                            <picture><source srcset="./img/article-image.webp" type="image/webp"><img src="./img/article-image.jpg" alt=""></picture>
+                                        </a>
+                                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                                        <h4 class="news-item__title">
+                                            <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью </a>
+                                        </h4>
+                                        <div class="news-item__tags">
+                                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                        </div>
+                                    </article>
+                                    <article class="news-item swiper-slide">
+                                        <a href="javascript:void(0)" class="news-item__image">
+                                            <picture><source srcset="./img/article-image.webp" type="image/webp"><img src="./img/article-image.jpg" alt=""></picture>
+                                        </a>
+                                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                                        <h4 class="news-item__title">
+                                            <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью </a>
+                                        </h4>
+                                        <div class="news-item__tags">
+                                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                        </div>
+                                    </article>
+                                    <article class="news-item swiper-slide">
+                                        <a href="javascript:void(0)" class="news-item__image">
+                                            <picture><source srcset="./img/article-image.webp" type="image/webp"><img src="./img/article-image.jpg" alt=""></picture>
+                                        </a>
+                                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                                        <h4 class="news-item__title">
+                                            <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью </a>
+                                        </h4>
+                                        <div class="news-item__tags">
+                                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class='swiper-pagination'></div>
+                            </div>
+                            <div class="search__pagination">
+                                <div class="swiper-button-prev pagination__prev">
+                                    <svg width="8" height="11" viewBox="0 0 8 11" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 9.5L2 5.5L7 1.5" stroke="white" stroke-width="2" />
+                                    </svg>
+                                </div>
+                                <div class="swiper-button-next pagination__next">
+                                    <svg width="8" height="11" viewBox="0 0 8 11" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 9.5L6 5.5L1 1.5" stroke="white" stroke-width="2" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='mobile_slider_wrapper'>
+                <div class="header__slider swiper">
+                    <div class="header__slider-before-shadow"></div>
+                    <div class="header__slider-after-shadow"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide release-item">
+                            <div class="release-item__wrapper">
+                                <a href="javascript:void(0)" class="release-item__name">Качество аудитов</a>
+                                <div class="release-item__month">Сентябрь</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide release-item">
+                            <div class="release-item__wrapper">
+                                <a href="javascript:void(0)" class="release-item__name">Качество аудитов</a>
+                                <div class="release-item__month">Октябрь</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide release-item">
+                            <div class="release-item__wrapper">
+                                <a href="javascript:void(0)" class="release-item__name">Безопасность</a>
+                                <div class="release-item__month">Ноябрь</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide release-item active-release">
+                            <div class="release-item__wrapper">
+                                <a href="javascript:void(0)" class="release-item__name">Качество аудитов</a>
+                                <div class="release-item__month">Декабрь</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide release-item not-filled-release">
+                            <div class="year-block">2024</div>
+                            <div class="release-item__wrapper">
+                                <a href="javascript:void(0)" class="release-item__name">Расследования
+                                    происшествий</a>
+                                <div class="release-item__month">Январь</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide release-item not-filled-release">
+                            <div class="release-item__wrapper">
+                                <a href="javascript:void(0)" class="release-item__name">Расследования
+                                    происшествий</a>
+                                <div class="release-item__month">Февраль</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide release-item not-filled-release">
+                            <div class="release-item__wrapper">
+                                <a href="javascript:void(0)" class="release-item__name">Расследования
+                                    происшествий</a>
+                                <div class="release-item__month">Февраль</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide release-item not-filled-release">
+                            <div class="release-item__wrapper">
+                                <a href="javascript:void(0)" class="release-item__name">Расследования
+                                    происшествий</a>
+                                <div class="release-item__month">Февраль</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide release-item not-filled-release">
+                            <div class="release-item__wrapper">
+                                <a href="javascript:void(0)" class="release-item__name">Расследования
+                                    происшествий</a>
+                                <div class="release-item__month">Февраль</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <main class="article-page">
     <section class="article-head">
         <div class="container article-container">
             <div class="article-head__content">
                 <div class="article-head__image">
                     <picture><source srcset="./img/main-image.webp" type="image/webp"><img src="./img/main-image.jpg" alt=""></picture>
+                    <div class="info__heading">Вызов</div>
+                    <div class="info__date">10.12.2024</div>
                 </div>
                 <div class="article-breadcrumbs">
                     <a class="breadcrumbs__item" href="javascript:void(0)">Главная</a>
@@ -229,6 +562,7 @@
                                     <picture><source srcset="https://fkpro.ru/userfls/clauses/large/1_tsekha.webp" type="image/webp"><img src="https://fkpro.ru/userfls/clauses/large/1_tsekha.jpg" alt=""></picture>
                                 </div>
                             </div>
+                            <div class='swiper-pagination'></div>
                         </div>
                     </div>
                     <div class="galery-section">
@@ -260,15 +594,16 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class='swiper-pagination'></div>
                         </div>
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam,
                     </p>
-                    <div class="image-block">
-                        <img src="./img/article-graph.svg" alt="">
-                    </div>
+                    <section class="graph-section">
+                        <iframe src="./img/article-graph.svg" frameborder="0"></iframe>
+                    </section>
 
                     <h2>Заголовок</h2>
                     <p>
@@ -423,6 +758,161 @@
                         <a href="javascript:void(0)" class="article-body__tag">#важная_деталь</a>
                         <a href="javascript:void(0)" class="article-body__tag">#в_перспективе</a>
                         <a href="javascript:void(0)" class="article-body__tag">#факультатив</a>
+                    </div>
+                    <div class='article-body_mobile_aside'>
+                        <div class="main-screen-slide__news-list some-news__list">
+                            <div class="news-list__item">
+                                <a href="javascript:void(0)" class="item-title">Заголовок статьи #1 рубрики</a>
+                                <div class="item-tags">
+                                    <a href="javascript:void(0)" class="item-tag">#ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#теги_статьи_ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#РУБРИКА</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Ответ_на_статью</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Случайная_статья</a>
+                                    <div class="item-tag__heading">В работе</div>
+                                </div>
+                            </div>
+                            <div class="news-list__item">
+                                <a href="javascript:void(0)" class="item-title">Заголовок статьи #2 рубрики “В
+                                    Работе” - 2 строки на Главной</a>
+                                <div class="item-tags">
+                                    <a href="javascript:void(0)" class="item-tag">#ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#теги_статьи_ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#РУБРИКА</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Ответ_на_статью</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Случайная_статья</a>
+                                    <div class="item-tag__heading">В работе</div>
+                                </div>
+                            </div>
+                            <div class="news-list__item">
+                                <a href="javascript:void(0)" class="item-title">Заголовок статьи #3 рубрики “В
+                                    Работе” - интервью или статья объемом от 3 до 8 тысяч знаков. 4 строки на
+                                    Главной странице</a>
+                                <div class="item-tags">
+                                    <a href="javascript:void(0)" class="item-tag">#ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#теги_статьи_ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#РУБРИКА</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Ответ_на_статью</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Случайная_статья</a>
+                                    <div class="item-tag__heading">В работе</div>
+                                </div>
+                            </div>
+
+                            <div class="news-list__item">
+                                <a href="javascript:void(0)" class="item-title">Заголовок статьи #1 рубрики</a>
+                                <div class="item-tags">
+                                    <a href="javascript:void(0)" class="item-tag">#ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#теги_статьи_ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#РУБРИКА</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Ответ_на_статью</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Случайная_статья</a>
+                                    <div class="item-tag__heading">В работе</div>
+                                </div>
+                            </div>
+                            <div class="news-list__item">
+                                <a href="javascript:void(0)" class="item-title">Заголовок статьи #2 рубрики “В
+                                    Работе” - 2 строки на Главной</a>
+                                <div class="item-tags">
+                                    <a href="javascript:void(0)" class="item-tag">#ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#теги_статьи_ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#РУБРИКА</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Ответ_на_статью</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Случайная_статья</a>
+                                    <div class="item-tag__heading">В работе</div>
+                                </div>
+                            </div>
+                            <div class="news-list__item">
+                                <a href="javascript:void(0)" class="item-title">Заголовок статьи #3 рубрики “В
+                                    Работе” - интервью или статья объемом от 3 до 8 тысяч знаков. 4 строки на
+                                    Главной странице</a>
+                                <div class="item-tags">
+                                    <a href="javascript:void(0)" class="item-tag">#ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#теги_статьи_ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#РУБРИКА</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Ответ_на_статью</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Случайная_статья</a>
+                                    <div class="item-tag__heading">В работе</div>
+                                </div>
+                            </div>
+
+                            <div class="news-list__item">
+                                <a href="javascript:void(0)" class="item-title">Заголовок статьи #1 рубрики</a>
+                                <div class="item-tags">
+                                    <a href="javascript:void(0)" class="item-tag">#ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#теги_статьи_ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#РУБРИКА</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Ответ_на_статью</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Случайная_статья</a>
+                                    <div class="item-tag__heading">В работе</div>
+                                </div>
+                            </div>
+                            <div class="news-list__item">
+                                <a href="javascript:void(0)" class="item-title">Заголовок статьи #2 рубрики “В
+                                    Работе” - 2 строки на Главной</a>
+                                <div class="item-tags">
+                                    <a href="javascript:void(0)" class="item-tag">#ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#теги_статьи_ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#РУБРИКА</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Ответ_на_статью</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Случайная_статья</a>
+                                    <div class="item-tag__heading">В работе</div>
+                                </div>
+                            </div>
+                            <div class="news-list__item">
+                                <a href="javascript:void(0)" class="item-title">Заголовок статьи #3 рубрики “В
+                                    Работе” - интервью или статья объемом от 3 до 8 тысяч знаков. 4 строки на
+                                    Главной странице</a>
+                                <div class="item-tags">
+                                    <a href="javascript:void(0)" class="item-tag">#ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#теги_статьи_ОМК</a>
+                                    <a href="javascript:void(0)" class="item-tag">#РУБРИКА</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Ответ_на_статью</a>
+                                    <a href="javascript:void(0)" class="item-tag">#Случайная_статья</a>
+                                    <div class="item-tag__heading">В работе</div>
+                                </div>
+                            </div>
+                            <article class="news-item news-item__no-image">
+                                <h4 class="news-item__title">
+                                    <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью или статья объемом от 3
+                                        до
+                                        8 тысяч
+                                        знаков. 4 строки на Главной странице</a>
+                                </h4>
+                                <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                                <div class="news-item__tags">
+                                    <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                    <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                    <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                    <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                    <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                    <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                    <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                </div>
+                            </article>
+                            <article class="news-item">
+                                <a href="javascript:void(0)" class="news-item__image">
+                                    <picture><source srcset="./img/article-image.webp" type="image/webp"><img src="./img/article-image.jpg" alt=""></picture>
+                                </a>
+                                <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                                <h4 class="news-item__title">
+                                    <a href=""> Заголовок статьи #3 рубрики “В Работе” - интервью или статья объемом “В
+                                        Работе” -
+                                        интервью или
+                                        статья объемом</a>
+                                </h4>
+                                <div class="news-item__tags">
+                                    <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                    <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                    <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                    <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                    <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                    <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                    <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                </div>
+                            </article>
+
+
+                        </div>
                     </div>
                     <div class="article-body__end">
                         <a href="javascript:void(0)" class="icon-btn">
@@ -615,84 +1105,90 @@
             </div>
             <section class="some-news">
                 <h2 class="section-title">Популярные материалы</h2>
-                <div class="some-news__list">
-                    <article class="news-item">
-                        <a href="javascript:void(0)" class="news-item__image">
-                            <picture><source srcset="./img/article-image.webp" type="image/webp"><img src="./img/article-image.jpg" alt=""></picture>
-                        </a>
-                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
-                        <h4 class="news-item__title">
-                            <a href=""> Заголовок статьи #3 рубрики “В Работе” - интервью или статья объемом “В Работе”
-                                -
-                                интервью или
-                                статья объемом</a>
-                        </h4>
-                        <div class="news-item__tags">
-                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                        </div>
-                    </article>
-                    <article class="news-item">
-                        <a href="javascript:void(0)" class="news-item__image">
-                            <picture><source srcset="./img/article-image.webp" type="image/webp"><img src="./img/article-image.jpg" alt=""></picture>
-                        </a>
-                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
-                        <h4 class="news-item__title">
-                            <a href=""> Заголовок статьи #3 рубрики “В Работе” - интервью или статья объемом “В Работе”
-                                -
-                                интервью или
-                                статья объемом</a>
-                        </h4>
-                        <div class="news-item__tags">
-                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                        </div>
-                    </article>
-                    <article class="news-item news-item__no-image">
-                        <h4 class="news-item__title">
-                            <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью или статья объемом от 3 до 8
-                                тысяч
-                                знаков. 4 строки на Главной странице</a>
-                        </h4>
-                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
-                        <div class="news-item__tags">
-                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                        </div>
-                    </article>
-                    <article class="news-item">
-                        <a href="javascript:void(0)" class="news-item__image">
-                            <picture><source srcset="./img/article-image.webp" type="image/webp"><img src="./img/article-image.jpg" alt=""></picture>
-                        </a>
-                        <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
-                        <h4 class="news-item__title">
-                            <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью </a>
-                        </h4>
-                        <div class="news-item__tags">
-                            <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                            <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
-                        </div>
-                    </article>
+                <div class="some-news__list swiper news__list-slider">
+                    <div class="swiper-wrapper">
+                        <article class="news-item swiper-slide">
+                            <a href="javascript:void(0)" class="news-item__image">
+                                <picture><source srcset="./img/article-image.webp" type="image/webp"><img src="./img/article-image.jpg" alt=""></picture>
+                            </a>
+                            <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                            <h4 class="news-item__title">
+                                <a href=""> Заголовок статьи #3 рубрики “В Работе” - интервью или статья объемом “В
+                                    Работе”
+                                    -
+                                    интервью или
+                                    статья объемом</a>
+                            </h4>
+                            <div class="news-item__tags">
+                                <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                            </div>
+                        </article>
+                        <article class="news-item swiper-slide">
+                            <a href="javascript:void(0)" class="news-item__image">
+                                <picture><source srcset="./img/article-image.webp" type="image/webp"><img src="./img/article-image.jpg" alt=""></picture>
+                            </a>
+                            <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                            <h4 class="news-item__title">
+                                <a href=""> Заголовок статьи #3 рубрики “В Работе” - интервью или статья объемом “В
+                                    Работе”
+                                    -
+                                    интервью или
+                                    статья объемом</a>
+                            </h4>
+                            <div class="news-item__tags">
+                                <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                            </div>
+                        </article>
+                        <article class="news-item news-item__no-image swiper-slide">
+                            <h4 class="news-item__title">
+                                <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью или статья объемом от 3 до
+                                    8
+                                    тысяч
+                                    знаков. 4 строки на Главной странице</a>
+                            </h4>
+                            <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                            <div class="news-item__tags">
+                                <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                            </div>
+                        </article>
+                        <article class="news-item swiper-slide">
+                            <a href="javascript:void(0)" class="news-item__image">
+                                <picture><source srcset="./img/article-image.webp" type="image/webp"><img src="./img/article-image.jpg" alt=""></picture>
+                            </a>
+                            <a href="javascript:void(0)" class="news-item__heading">В фокусе</a>
+                            <h4 class="news-item__title">
+                                <a href="">Заголовок статьи #3 рубрики “В Работе” - интервью </a>
+                            </h4>
+                            <div class="news-item__tags">
+                                <a href="javascript:void(0)" class="news-item__tag">#ОМК</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#теги_статьи_ОМК</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#РУБРИКА</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Ответ_на_статью</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                                <a href="javascript:void(0)" class="news-item__tag">#Случайная_статья</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class='swiper-pagination'></div>
                 </div>
                 <div class="show-more-btn-wrapper">
                     <button class="ghost-btn">Показать еще</button>
@@ -714,7 +1210,10 @@
         <div class="footer__content">
             <div class="footer__block">
                 <a href="javascript:void(0)" class="footer__logo">
-                    <img src="./img/footer-logo.svg" alt="">
+                    <picture>
+                        <source media="(max-width: 576px)" srcset="./img/logo_white.svg">
+                        <img src="./img/footer-logo.svg" alt="">
+                    </picture>
                 </a>
                 <div class="footer__trademark">
                     © 2024. Все права защищены.
@@ -745,7 +1244,7 @@
 
             </div>
             <div class="footer__block">
-                <div class="footer__group" style="margin-bottom: 30px;">
+                <div class="footer__group footer__group_tel">
                     <a href="tel:+78002008000" class="footer__bold-title">+7 (800) 200-8000</a>
                     <div class="group__text">бесплатный по России</div>
                 </div>
@@ -755,34 +1254,39 @@
                 </div>
             </div>
             <div class="footer__block">
-                <div class="footer__bold-title">Мы в социальных сетях</div>
-                <div class="socials">
-                    <a href="javascript:void(0)" class="social__item">
-                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M10.78 23.9136V0.0943605C10.78 0.0943605 8.58059 0.00736034 6.63279 0.0942603C4.36219 0.19546 2.54858 0.47506 1.26288 2.15456C0.121685 3.64546 -0.0993158 6.75706 0.0348842 12.0879C0.0227842 16.2722 -0.241515 20.0881 1.53748 22.0327C2.40908 22.9854 3.87938 23.5063 5.84628 23.6675C8.25498 23.8649 10.78 23.9136 10.78 23.9136Z"
-                                fill="#DDDEE0" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M15.3599 24H13.0719C5.81186 24 4.25586 22.4515 4.25586 15.225V8.7745C4.25586 1.5485 5.81186 0 13.0719 0H15.3599C22.4364 0 24.0939 1.4715 24.1729 8.238C24.1749 8.4135 24.1759 8.592 24.1759 8.775V15.2255C24.1759 15.3945 24.1754 15.561 24.1734 15.7245C24.0999 22.523 22.4499 24 15.3599 24ZM19.8297 11.3734C19.6262 10.9164 19.0197 10.5659 17.8062 9.8654L14.4817 7.9459C13.2687 7.2454 12.6617 6.8954 12.1637 6.9474C11.949 6.97 11.7415 7.0375 11.5546 7.1454C11.3677 7.2533 11.2056 7.3993 11.0787 7.5739C10.7842 7.9789 10.7842 8.6794 10.7842 10.0804V13.9199C10.7842 15.3209 10.7842 16.0209 11.0787 16.4259C11.2055 16.6006 11.3676 16.7467 11.5546 16.8548C11.7415 16.9628 11.949 17.0303 12.1637 17.0529C12.661 17.1049 13.2664 16.7555 14.4758 16.0575L14.4812 16.0544L17.8062 14.1349C19.0197 13.4344 19.6262 13.0839 19.8297 12.6269C19.9176 12.4297 19.963 12.2161 19.963 12.0002C19.963 11.7842 19.9176 11.5707 19.8297 11.3734Z"
-                                fill="white" />
-                        </svg>
+                <div class='socials_wrapper'>
+                    <div class="footer__bold-title">Мы в социальных сетях</div>
+                    <div class="socials">
+                        <a href="javascript:void(0)" class="social__item">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.78 23.9136V0.0943605C10.78 0.0943605 8.58059 0.00736034 6.63279 0.0942603C4.36219 0.19546 2.54858 0.47506 1.26288 2.15456C0.121685 3.64546 -0.0993158 6.75706 0.0348842 12.0879C0.0227842 16.2722 -0.241515 20.0881 1.53748 22.0327C2.40908 22.9854 3.87938 23.5063 5.84628 23.6675C8.25498 23.8649 10.78 23.9136 10.78 23.9136Z"
+                                    fill="#DDDEE0" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M15.3599 24H13.0719C5.81186 24 4.25586 22.4515 4.25586 15.225V8.7745C4.25586 1.5485 5.81186 0 13.0719 0H15.3599C22.4364 0 24.0939 1.4715 24.1729 8.238C24.1749 8.4135 24.1759 8.592 24.1759 8.775V15.2255C24.1759 15.3945 24.1754 15.561 24.1734 15.7245C24.0999 22.523 22.4499 24 15.3599 24ZM19.8297 11.3734C19.6262 10.9164 19.0197 10.5659 17.8062 9.8654L14.4817 7.9459C13.2687 7.2454 12.6617 6.8954 12.1637 6.9474C11.949 6.97 11.7415 7.0375 11.5546 7.1454C11.3677 7.2533 11.2056 7.3993 11.0787 7.5739C10.7842 7.9789 10.7842 8.6794 10.7842 10.0804V13.9199C10.7842 15.3209 10.7842 16.0209 11.0787 16.4259C11.2055 16.6006 11.3676 16.7467 11.5546 16.8548C11.7415 16.9628 11.949 17.0303 12.1637 17.0529C12.661 17.1049 13.2664 16.7555 14.4758 16.0575L14.4812 16.0544L17.8062 14.1349C19.0197 13.4344 19.6262 13.0839 19.8297 12.6269C19.9176 12.4297 19.963 12.2161 19.963 12.0002C19.963 11.7842 19.9176 11.5707 19.8297 11.3734Z"
+                                    fill="white" />
+                            </svg>
 
-                    </a>
-                    <a href="javascript:void(0)" class="social__item">
-                        <svg width="26" height="15" viewBox="0 0 26 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M24.968 13.0304C24.968 12.9309 24.8684 12.9309 24.8684 12.8315C24.4706 12.0357 23.5754 11.041 22.3818 9.9469C21.7849 9.4495 21.4866 9.0517 21.2876 8.8527C20.9892 8.4548 20.9892 8.1565 21.0887 7.7586C21.1881 7.4602 21.586 6.9628 22.2823 6.0676C22.6802 5.5702 22.8791 5.2719 23.1775 4.9734C24.6695 2.9841 25.3658 1.691 25.1669 1.0941L25.0675 0.994699C24.968 0.895199 24.8684 0.795799 24.6695 0.795799C24.4706 0.696299 24.1722 0.696299 23.8738 0.795799H20.094C19.9945 0.795799 19.9945 0.795799 19.7955 0.795799C19.6961 0.795799 19.5966 0.795799 19.5966 0.795799H19.4972H19.3977L19.2982 0.895201C19.1987 0.994701 19.1987 0.994701 19.1987 1.0941C18.8008 2.1883 18.3035 3.0835 17.8061 4.0782C17.5078 4.5756 17.2094 5.0729 16.911 5.4708C16.6126 5.8687 16.4137 6.1671 16.2147 6.366C16.0158 6.5649 15.8169 6.6644 15.7173 6.8634C15.6179 6.9628 15.419 7.0623 15.419 6.9628C15.3195 6.9628 15.22 6.9628 15.22 6.8634C15.1205 6.7639 15.0211 6.6644 14.9216 6.5649C14.8222 6.4655 14.8222 6.2665 14.7226 6.0676C14.7226 5.8687 14.7226 5.6697 14.7226 5.5702C14.7226 5.4708 14.7226 5.1724 14.7226 4.9734C14.7226 4.675 14.7226 4.4761 14.7226 4.3766C14.7226 4.0782 14.7226 3.6804 14.7226 3.2825C14.7226 2.8846 14.7226 2.5862 14.7226 2.3872C14.7226 2.1883 14.7226 1.8899 14.7226 1.691C14.7226 1.3926 14.7226 1.1936 14.7226 1.0941C14.7226 0.994701 14.6232 0.7957 14.6232 0.696301C14.5237 0.596801 14.4243 0.4973 14.3248 0.3979C14.2253 0.2984 14.0264 0.2984 13.9269 0.1989C13.4296 0.0995002 12.8328 0 12.1365 0C10.545 0 9.45079 0.0995009 9.05289 0.298401C8.85399 0.397901 8.6551 0.497301 8.5556 0.696301C8.3567 0.8952 8.3567 0.994699 8.45609 0.994699C8.9535 1.0942 9.35139 1.2931 9.55029 1.5915L9.6498 1.7904C9.7492 1.8899 9.7492 2.0888 9.8487 2.3872C9.9482 2.6857 9.94819 2.9841 9.94819 3.3819C9.94819 3.9787 9.94819 4.5756 9.94819 4.9734C9.94819 5.4708 9.8487 5.7692 9.8487 6.0676C9.8487 6.366 9.7492 6.5649 9.6498 6.6644C9.5503 6.8634 9.5503 6.9628 9.4508 6.9628C9.4508 6.9628 9.4508 7.0623 9.3513 7.0623C9.2519 7.0623 9.1524 7.1618 8.9535 7.1618C8.854 7.1618 8.6551 7.0623 8.5556 6.9628C8.3567 6.8634 8.1577 6.6644 8.0583 6.4655C7.8593 6.2665 7.6604 5.9681 7.4614 5.5702C7.2625 5.1724 6.96409 4.7745 6.76509 4.1777L6.56619 3.7798C6.46669 3.5809 6.2678 3.183 6.0689 2.6857C5.8699 2.1883 5.671 1.7904 5.4721 1.2931C5.3726 1.0942 5.27309 0.994701 5.17369 0.895201H5.0742C5.0742 0.895201 4.97469 0.795799 4.87519 0.795799C4.77579 0.795799 4.6763 0.696301 4.5768 0.696301H0.995996C0.598096 0.696301 0.399095 0.795701 0.299695 0.895201L0.200195 0.994699C0.200195 0.994699 0.200195 1.0942 0.200195 1.1936C0.200195 1.2931 0.200195 1.3926 0.299695 1.5915C0.796995 2.7851 1.39379 3.9787 1.99059 5.1724C2.58749 6.2665 3.1843 7.2612 3.5822 7.9575C4.0795 8.6538 4.4774 9.3501 4.9747 9.9469C5.4721 10.5437 5.7705 10.9416 5.8699 11.1405C6.0689 11.3395 6.1683 11.4389 6.2678 11.5384L6.56619 11.8368C6.76519 12.0357 7.0636 12.3342 7.4614 12.6325C7.8593 12.931 8.35659 13.2294 8.85399 13.5277C9.35129 13.8262 9.9482 14.0251 10.545 14.2241C11.2412 14.423 11.8381 14.5224 12.4349 14.423H13.9269C14.2253 14.423 14.4243 14.3235 14.6232 14.1245L14.7226 14.0251C14.7226 13.9256 14.8222 13.9256 14.8222 13.8262C14.8222 13.7267 14.8222 13.6272 14.8222 13.4283C14.8222 13.0304 14.8222 12.7321 14.9216 12.4336C15.0211 12.1352 15.0211 11.9363 15.1205 11.7374C15.22 11.5384 15.3195 11.4389 15.419 11.3395C15.5184 11.24 15.6179 11.1405 15.6179 11.1405H15.7173C15.9163 11.041 16.2147 11.1405 16.4137 11.3395C16.712 11.5384 17.0104 11.8368 17.2093 12.1352C17.4083 12.4336 17.7067 12.7321 18.1046 13.1298C18.5025 13.5277 18.8008 13.8262 18.9998 13.9256L19.2982 14.1245C19.4972 14.2241 19.6961 14.3235 19.9945 14.423C20.2929 14.5224 20.4919 14.5224 20.6908 14.5224L24.0728 14.423C24.3711 14.423 24.6695 14.3235 24.8684 14.2241C25.0674 14.1245 25.1669 14.0251 25.1669 13.8262C25.1669 13.7267 25.1669 13.5277 25.1669 13.4283C24.968 13.2294 24.968 13.1298 24.968 13.0304Z"
-                                fill="white" />
-                        </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="social__item">
+                            <svg width="26" height="15" viewBox="0 0 26 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M24.968 13.0304C24.968 12.9309 24.8684 12.9309 24.8684 12.8315C24.4706 12.0357 23.5754 11.041 22.3818 9.9469C21.7849 9.4495 21.4866 9.0517 21.2876 8.8527C20.9892 8.4548 20.9892 8.1565 21.0887 7.7586C21.1881 7.4602 21.586 6.9628 22.2823 6.0676C22.6802 5.5702 22.8791 5.2719 23.1775 4.9734C24.6695 2.9841 25.3658 1.691 25.1669 1.0941L25.0675 0.994699C24.968 0.895199 24.8684 0.795799 24.6695 0.795799C24.4706 0.696299 24.1722 0.696299 23.8738 0.795799H20.094C19.9945 0.795799 19.9945 0.795799 19.7955 0.795799C19.6961 0.795799 19.5966 0.795799 19.5966 0.795799H19.4972H19.3977L19.2982 0.895201C19.1987 0.994701 19.1987 0.994701 19.1987 1.0941C18.8008 2.1883 18.3035 3.0835 17.8061 4.0782C17.5078 4.5756 17.2094 5.0729 16.911 5.4708C16.6126 5.8687 16.4137 6.1671 16.2147 6.366C16.0158 6.5649 15.8169 6.6644 15.7173 6.8634C15.6179 6.9628 15.419 7.0623 15.419 6.9628C15.3195 6.9628 15.22 6.9628 15.22 6.8634C15.1205 6.7639 15.0211 6.6644 14.9216 6.5649C14.8222 6.4655 14.8222 6.2665 14.7226 6.0676C14.7226 5.8687 14.7226 5.6697 14.7226 5.5702C14.7226 5.4708 14.7226 5.1724 14.7226 4.9734C14.7226 4.675 14.7226 4.4761 14.7226 4.3766C14.7226 4.0782 14.7226 3.6804 14.7226 3.2825C14.7226 2.8846 14.7226 2.5862 14.7226 2.3872C14.7226 2.1883 14.7226 1.8899 14.7226 1.691C14.7226 1.3926 14.7226 1.1936 14.7226 1.0941C14.7226 0.994701 14.6232 0.7957 14.6232 0.696301C14.5237 0.596801 14.4243 0.4973 14.3248 0.3979C14.2253 0.2984 14.0264 0.2984 13.9269 0.1989C13.4296 0.0995002 12.8328 0 12.1365 0C10.545 0 9.45079 0.0995009 9.05289 0.298401C8.85399 0.397901 8.6551 0.497301 8.5556 0.696301C8.3567 0.8952 8.3567 0.994699 8.45609 0.994699C8.9535 1.0942 9.35139 1.2931 9.55029 1.5915L9.6498 1.7904C9.7492 1.8899 9.7492 2.0888 9.8487 2.3872C9.9482 2.6857 9.94819 2.9841 9.94819 3.3819C9.94819 3.9787 9.94819 4.5756 9.94819 4.9734C9.94819 5.4708 9.8487 5.7692 9.8487 6.0676C9.8487 6.366 9.7492 6.5649 9.6498 6.6644C9.5503 6.8634 9.5503 6.9628 9.4508 6.9628C9.4508 6.9628 9.4508 7.0623 9.3513 7.0623C9.2519 7.0623 9.1524 7.1618 8.9535 7.1618C8.854 7.1618 8.6551 7.0623 8.5556 6.9628C8.3567 6.8634 8.1577 6.6644 8.0583 6.4655C7.8593 6.2665 7.6604 5.9681 7.4614 5.5702C7.2625 5.1724 6.96409 4.7745 6.76509 4.1777L6.56619 3.7798C6.46669 3.5809 6.2678 3.183 6.0689 2.6857C5.8699 2.1883 5.671 1.7904 5.4721 1.2931C5.3726 1.0942 5.27309 0.994701 5.17369 0.895201H5.0742C5.0742 0.895201 4.97469 0.795799 4.87519 0.795799C4.77579 0.795799 4.6763 0.696301 4.5768 0.696301H0.995996C0.598096 0.696301 0.399095 0.795701 0.299695 0.895201L0.200195 0.994699C0.200195 0.994699 0.200195 1.0942 0.200195 1.1936C0.200195 1.2931 0.200195 1.3926 0.299695 1.5915C0.796995 2.7851 1.39379 3.9787 1.99059 5.1724C2.58749 6.2665 3.1843 7.2612 3.5822 7.9575C4.0795 8.6538 4.4774 9.3501 4.9747 9.9469C5.4721 10.5437 5.7705 10.9416 5.8699 11.1405C6.0689 11.3395 6.1683 11.4389 6.2678 11.5384L6.56619 11.8368C6.76519 12.0357 7.0636 12.3342 7.4614 12.6325C7.8593 12.931 8.35659 13.2294 8.85399 13.5277C9.35129 13.8262 9.9482 14.0251 10.545 14.2241C11.2412 14.423 11.8381 14.5224 12.4349 14.423H13.9269C14.2253 14.423 14.4243 14.3235 14.6232 14.1245L14.7226 14.0251C14.7226 13.9256 14.8222 13.9256 14.8222 13.8262C14.8222 13.7267 14.8222 13.6272 14.8222 13.4283C14.8222 13.0304 14.8222 12.7321 14.9216 12.4336C15.0211 12.1352 15.0211 11.9363 15.1205 11.7374C15.22 11.5384 15.3195 11.4389 15.419 11.3395C15.5184 11.24 15.6179 11.1405 15.6179 11.1405H15.7173C15.9163 11.041 16.2147 11.1405 16.4137 11.3395C16.712 11.5384 17.0104 11.8368 17.2093 12.1352C17.4083 12.4336 17.7067 12.7321 18.1046 13.1298C18.5025 13.5277 18.8008 13.8262 18.9998 13.9256L19.2982 14.1245C19.4972 14.2241 19.6961 14.3235 19.9945 14.423C20.2929 14.5224 20.4919 14.5224 20.6908 14.5224L24.0728 14.423C24.3711 14.423 24.6695 14.3235 24.8684 14.2241C25.0674 14.1245 25.1669 14.0251 25.1669 13.8262C25.1669 13.7267 25.1669 13.5277 25.1669 13.4283C24.968 13.2294 24.968 13.1298 24.968 13.0304Z"
+                                    fill="white" />
+                            </svg>
 
-                    </a>
-                    <a href="javascript:void(0)" class="social__item">
-                        <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9.61757 13.1813L9.22057 18.7653C9.78857 18.7653 10.0346 18.5213 10.3296 18.2283L12.9927 15.6833L18.5108 19.7243C19.5228 20.2883 20.2359 19.9913 20.5089 18.7933L24.131 1.82141L24.132 1.82041C24.453 0.324406 23.5909 -0.260595 22.6049 0.106405L1.31437 8.25741C-0.138627 8.82141 -0.116627 9.63141 1.06737 9.99841L6.51047 11.6913L19.1538 3.78041C19.7488 3.38641 20.2899 3.60441 19.8448 3.99841L9.61757 13.1813Z"
-                                fill="white" />
-                        </svg>
-                    </a>
+                        </a>
+                        <a href="javascript:void(0)" class="social__item">
+                            <svg width="25" height="20" viewBox="0 0 25 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.61757 13.1813L9.22057 18.7653C9.78857 18.7653 10.0346 18.5213 10.3296 18.2283L12.9927 15.6833L18.5108 19.7243C19.5228 20.2883 20.2359 19.9913 20.5089 18.7933L24.131 1.82141L24.132 1.82041C24.453 0.324406 23.5909 -0.260595 22.6049 0.106405L1.31437 8.25741C-0.138627 8.82141 -0.116627 9.63141 1.06737 9.99841L6.51047 11.6913L19.1538 3.78041C19.7488 3.38641 20.2899 3.60441 19.8448 3.99841L9.61757 13.1813Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
                 <a href="javascript:void(0)" class="footer-btn orange-btn">Подписаться</a>
             </div>
@@ -821,9 +1325,9 @@
     </div>
 </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20240401144005"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js?_v=20240401144005"></script>
-<script src="https://cdn.plyr.io/3.7.8/plyr.js?_v=20240401144005"></script>
-<script src="./js/app.js?_v=20240401144005"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20240410161733"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js?_v=20240410161733"></script>
+<script src="https://cdn.plyr.io/3.7.8/plyr.js?_v=20240410161733"></script>
+<script src="./js/app.js?_v=20240410161733"></script>
 
 </html>
