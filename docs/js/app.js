@@ -336,3 +336,23 @@ const newsSlider = new Swiper('.news__list-slider', {
         },
     },
 })
+
+const searchResultSlider = new Swiper('.search__result-slider', {
+    slidesPerView: 'auto',
+    navigation: {
+        nextEl: '.search__result .swiper-button-next',
+        prevEl: '.search__result .swiper-button-prev',
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    breakpoints: {
+        993: {
+            slidesPerView: 3,
+        },
+        1201: {
+            slidesPerView: 4,
+        },
+    },
+})

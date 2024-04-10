@@ -2570,10 +2570,13 @@ body.search-page {
     transform: scale(1.2);
   }
 
-  .search__result {
-    padding-right: 0;
-    padding-left: 0;
-    padding-bottom: 44px;
+  .smal-container {
+    .search__result {
+      padding-right: 0;
+      padding-left: 0;
+      padding-bottom: 44px;
+    }
+
   }
 
   .smal-container::before,
@@ -2943,6 +2946,10 @@ body.search-page {
 }
 
 @media screen and (max-width:992px) {
+  body.search-page .mobile_menu .search__pagination {
+    display: none;
+  }
+
   .main-screen__slider .main-screen__nav {
     display: none;
   }
@@ -3407,6 +3414,8 @@ body.search-page {
 
     .some-news__list {
       overflow: hidden;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 
