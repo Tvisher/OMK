@@ -168,7 +168,7 @@ const insetSlider = new Swiper('.inset-slider', {
 const galerySections = document.querySelectorAll('.galery-section');
 if (galerySections.length > 0) {
     galerySections.forEach(galerySection => {
-        const galerySectionSliderEl = galerySection.querySelector('.galery-section__slider')
+        const galerySectionSliderEl = galerySection.querySelector('.article-body .galery-section__slider')
         const prevBtn = galerySection.querySelector('.swiper-button-prev');
         const nextBtn = galerySection.querySelector('.swiper-button-next');
         const galerySectionSlider = new Swiper(galerySectionSliderEl, {
@@ -214,12 +214,12 @@ $(document).ready(function () {
 });
 if (galerySections.length > 0) {
     galerySections.forEach(galerySection => {
-        const galerySectionSliderEl = galerySection.querySelector('.galery-section__slider')
+        const galerySectionSliderEl = galerySection.querySelector('.smal-container .galery-section__slider')
         const prevBtn = galerySection.querySelector('.swiper-button-prev');
         const nextBtn = galerySection.querySelector('.swiper-button-next');
         const galerySectionSlider = new Swiper(galerySectionSliderEl, {
             speed: 800,
-            slidesPerView: "auto",
+            slidesPerView: 'auto',
             spaceBetween: 20,
             navigation: {
                 nextEl: nextBtn,

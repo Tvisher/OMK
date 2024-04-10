@@ -399,6 +399,7 @@ main {
   background-color: #fff;
   transition: background-color 0.2s ease-in-out;
   line-height: 120%;
+  text-align: center;
 
   &:hover {
     background-color: #d7dae2;
@@ -3143,6 +3144,10 @@ body.search-page {
     }
   }
 
+  .header__slider {
+    padding: 13px 10px;
+  }
+
   .footer-btn {
     margin-bottom: 0;
   }
@@ -3398,7 +3403,11 @@ body.search-page {
   }
 
   .mobile_menu .search__result {
-    overflow: auto;
+    overflow-y: auto;
+
+    .some-news__list {
+      overflow: hidden;
+    }
   }
 
   .menu-tag {
@@ -3727,6 +3736,7 @@ body.search-page {
   .galery-section__slider .galery-slide {
     height: 234px;
     width: auto;
+    max-width: 100%;
   }
 
   .galery-section__slider .galery-slide img {
@@ -4228,20 +4238,23 @@ body.search-page {
     display: none;
   }
 
-  .article-head__image {
-    position: relative;
-    padding: 14px 10px 56.25%;
-    overflow: hidden;
-    height: 0;
+  .article-head__image_text {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 14px 10px;
+  }
+
+  .article-head__image {
+    position: relative;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    height: 0;
 
     .info__heading,
     .info__date {
       display: flex;
       z-index: 1;
-      margin-top: 20px;
     }
 
     img {
