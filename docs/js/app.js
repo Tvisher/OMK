@@ -164,6 +164,20 @@ const insetSlider = new Swiper('.inset-slider', {
     },
 
 });
+const players = Plyr.setup('[data-players]', {
+    controls: [
+        'play-large',
+        'play',
+        'progress',
+        'current-time',
+        'mute',
+        'volume',
+        'captions',
+        'pip',
+        'airplay',
+        'fullscreen'
+    ],
+});
 
 const galerySections = document.querySelectorAll('.galery-section');
 if (galerySections.length > 0) {
@@ -183,9 +197,28 @@ if (galerySections.length > 0) {
                 el: ".swiper-pagination",
                 clickable: true,
             },
+            on: {
+                slideChangeTransitionEnd: function (slider) {
+                    //останавливать видео при пролистывании слайдера
+                    const currentSlideWithPlayer = slider.slides[slider.activeIndex].querySelector('.plyr');
+                    players.forEach(player => player.pause());
+                }
+            }
         });
     })
 
+}
+//останавливать видео если запустили другое видео
+if ($('.galery-section__video').length) {
+    players.forEach(player => {
+        player.on('play', () => {
+            players.forEach(otherPlayer => {
+                if (otherPlayer !== player && otherPlayer.playing) {
+                    otherPlayer.pause();
+                }
+            });
+        });
+    });
 }
 
 $(document).ready(function () {
@@ -272,20 +305,6 @@ $(".mobile_menu_back").on('click', function () {
     $(this).removeClass('show')
     $('.main-screen__menu-inner').removeClass('show')
 
-});
-const players = Plyr.setup('[data-players]', {
-    controls: [
-        'play-large',
-        'play',
-        'progress',
-        'current-time',
-        'mute',
-        'volume',
-        'captions',
-        'pip',
-        'airplay',
-        'fullscreen'
-    ],
 });
 
 $(document).ready(function () {
